@@ -8,34 +8,180 @@ public class Calculator {
     public static boolean getRunning() {return bRunning;}
     public static void main(String[] args) {
         while(getRunning()) {
+            System.out.print("Enter your data type (integer, float, double): ");
+            String strType = sc.toString();
+            double temp = 0;
             System.out.print("Enter your first number: ");
-            float fNum1 = sc.nextFloat();
+            double d1 = sc.nextDouble();
             System.out.print("Enter your operation: ");
-            String cOp = sc.next();
+            char op = sc.toString().charAt(0);
             System.out.print("Enter your second number: ");
-            float fNum2 = sc.nextFloat();
-            float temp = 0.0f;
-            switch(cOp) {
-                case "+":
-                    temp = jMath.fAdd(fNum1,fNum2);
-                    break;
-                case "-":
-                    temp = jMath.fSub(fNum1, fNum2);
-                    break;
-                case "*":
-                    temp = jMath.fMul(fNum1, fNum2);
-                    break;
-                case "/":
-                    temp = jMath.fDiv(fNum1, fNum2);
-                    break;
-                case "^":
-                    temp = jMath.fExp(fNum1, (int)fNum2);
-                    break;
-                case "rt":
-                    temp = jMath.fRoot(fNum1, (int)fNum2);
-                    break;
-                default:
-                    break;
+            double d2 = sc.nextDouble();
+
+            switch(op) {
+                case '+':
+                    switch(strType) {
+                        case "integer":
+                            temp = jMath.iAdd((int)d1, (int)d2);
+                            break;
+                        case "int":
+                            temp = jMath.iAdd((int)d1, (int)d2);
+                            break;
+                        case "i":
+                            temp = jMath.iAdd((int)d1, (int)d2);
+                            break;
+                        case "float":
+                            temp = jMath.fAdd((float)d1, (float)d2);
+                            break;
+                        case "f":
+                            temp = jMath.fAdd((float)d1, (float)d2);
+                            break;
+                        case "double":
+                            temp = jMath.dAdd(d1, d2);
+                            break;
+                        case "d":
+                            temp = jMath.dAdd(d1,d2);
+                            break;
+                        default:
+                            temp = 0;
+                            break;
+                    }
+                case '-':
+                    switch(strType) {
+                        case "integer":
+                            temp = jMath.iSub((int)d1, (int)d2);
+                            break;
+                        case "int":
+                            temp = jMath.iSub((int)d1, (int)d2);
+                            break;
+                        case "i":
+                            temp = jMath.iSub((int)d1, (int)d2);
+                            break;
+                        case "float":
+                            temp = jMath.fSub((float)d1, (float)d2);
+                            break;
+                        case "f":
+                            temp = jMath.fSub((float)d1, (float)d2);
+                            break;
+                        case "double":
+                            temp = jMath.dSub(d1, d2);
+                            break;
+                        case "d":
+                            temp = jMath.dSub(d1, d2);
+                            break;
+                        default:
+                            temp = 0;
+                            break;
+                    }
+                case '*':
+                    switch(strType) {
+                        case "integer":
+                            temp = jMath.iMul((int)d1, (int)d2);
+                            break;
+                        case "int":
+                            temp = jMath.iMul((int)d1, (int)d2);
+                            break;
+                        case "i":
+                            temp = jMath.iMul((int)d1, (int)d2);
+                            break;
+                        case "float":
+                            temp = jMath.fMul((float)d1, (float)d2);
+                            break;
+                        case "f":
+                            temp = jMath.fMul((float)d1, (float)d2);
+                            break;
+                        case "double":
+                            temp = jMath.dMul(d1,d2);
+                            break;
+                        case "d":
+                            temp = jMath.dMul(d1,d2);
+                            break;
+                        default:
+                            temp = 0;
+                            break;
+                    }
+                case '/':
+                    switch(strType) {
+                        case "integer":
+                            temp = jMath.iDiv((int)d1, (int)d2);
+                            break;
+                        case "int":
+                            temp = jMath.iDiv((int)d1, (int)d2);
+                            break;
+                        case "i":
+                            temp = jMath.iDiv((int)d1, (int)d2);
+                            break;
+                        case "float":
+                            temp = jMath.fDiv((float)d1, (float)d2);
+                            break;
+                        case "f":
+                            temp = jMath.fDiv((float)d1, (float)d2);
+                            break;
+                        case "double":
+                            temp = jMath.dDiv(d1, d2);
+                            break;
+                        case "d":
+                            temp = jMath.dDiv(d1, d2);
+                            break;
+                        default:
+                            temp = 0;
+                            break;
+                    }
+                case '^':
+                    switch(strType) {
+                        case "integer":
+                            temp = jMath.iExp((int)d1, (int)d2);
+                            break;
+                        case "int":
+                            temp = jMath.iExp((int)d1, (int)d2);
+                            break;
+                        case "i":
+                            temp = jMath.iExp((int)d1, (int)d2);
+                            break;
+                        case "float":
+                            temp = jMath.fExp((float)d1, (int)d2);
+                            break;
+                        case "f":
+                            temp = jMath.fExp((float)d1, (int)d2);
+                            break;
+                        case "double":
+                            temp = jMath.dExp(d1, (int)d2);
+                            break;
+                        case "d":
+                            temp = jMath.dExp(d1, (int)d2);
+                            break;
+                        default:
+                            temp = 0;
+                            break;
+                    }
+                case 'r':
+                    switch(strType) {
+                        case "integer":
+                            temp = jMath.iRoot((int)d1, (int)d2);
+                            break;
+                        case "int":
+                            temp = jMath.iRoot((int)d1, (int)d2);
+                            break;
+                        case "i":
+                            temp = jMath.iRoot((int)d1, (int)d2);
+                            break;
+                        case "float":
+                            temp = jMath.fRoot((float)d1, (int)d2);
+                            break;
+                        case "f":
+                            temp = jMath.fRoot((float)d1, (int)d2);
+                            break;
+                        case "double":
+                            temp = jMath.dRoot(d1, (int)d2);
+                            break;
+                        case "d":
+                            temp = jMath.dRoot(d1, (int)d2);
+                            break;
+                        default:
+                            temp = 0;
+                            break;
+
+                    }
             }
 
             System.out.println("The answer is: " + temp);
